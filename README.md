@@ -1,11 +1,13 @@
 # GifTools
 
-GifTools is a suite of lightweight tools for editing GIFs. Whether you need to convert an MP4 video into a GIF or resize an existing GIF, GifTools has you covered!
+GifTools is a suite of lightweight tools for editing GIFs. Whether you need to convert an MP4 video into a GIF, crop a square avatar, resize an existing GIF, or shrink a large GIF, GifTools has you covered!
 
 ## Features
 
 - **Convert MP4 to GIF:** Transform your MP4 videos into high-quality GIFs quickly and easily.
 - **Resize GIF:** Adjust the dimensions of your GIFs to fit your needs.
+- **Compress GIF:** Reduce the file size of animated or still GIFs with control over colours, dithering, frame rate, and scale. Set a target file size and the tool will find the largest scale that fits.
+- **Crop & Resize:** Visually crop with a locked square selection and export at 80x80, 240x240, or a custom size.
 - **Edit Gif Frames:** Add frames or r emove Frames from any GIFs or Create GIFs from single images
 - **Add Text:** Add text to spice up that meme!
 
@@ -35,6 +37,40 @@ Download the executable:
 [ResizeGif.exe](https://github.com/Kavex/GifTools/releases/download/ResizeGif/ResizeGif.exe)
 
 Requires: ffmpeg
+
+---
+
+### Compress GIF
+
+Reduce the size of an animated or still GIF. Choose the maximum number of
+colours, dithering, frame rate, and scale, or set a target file size and let
+the tool find the largest scale that fits. Source frame timing and loop count
+are preserved unless you choose to resample the frame rate.
+
+Run:
+
+```bash
+python CompressGif.py
+```
+
+Requires: ffmpeg, pillow  
+Optional: gifsicle (enables lossy optimisation; `sudo apt install gifsicle`)
+
+---
+
+### Crop & Resize GIF
+
+Visually crop a GIF or still image with a fixed 1:1 selection, then export at
+80x80, 240x240, or a custom width and height. The crop box can be dragged,
+resized from any corner, or nudged with the arrow keys.
+
+Run:
+
+```bash
+python CropResizeGif.py
+```
+
+Requires: pillow
 
 ---
 

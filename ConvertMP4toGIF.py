@@ -73,7 +73,10 @@ def convert_video():
 # Set up the GUI
 root = tk.Tk()
 root.title("MP4 to GIF Converter")
-root.wm_attributes('-toolwindow', 'True')  # Set as a tool window
+try:
+    root.wm_attributes('-toolwindow', 'True')  # Set as a tool window
+except tk.TclError:
+    pass  # Windows-only attribute; harmless elsewhere.
 
 # Input file selection
 tk.Label(root, text="Input MP4 File:").grid(row=0, column=0, padx=5, pady=5, sticky="e")
